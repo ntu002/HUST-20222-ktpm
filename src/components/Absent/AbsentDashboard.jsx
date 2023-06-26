@@ -50,11 +50,6 @@ function AbsentDashboard() {
             <td>{item.diachi}</td>
             <td>{item.tungay}</td>
             <td>{item.denngay}</td>
-            <td>
-              <i class={Styles.font}><FontAwesomeIcon icon={faPenToSquare}/></i>
-              &emsp;
-              <i class={Styles.font}><FontAwesomeIcon icon={faTrashCan}/></i>
-            </td>
           </tr>
             ))
           }
