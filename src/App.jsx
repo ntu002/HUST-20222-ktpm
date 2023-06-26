@@ -4,8 +4,9 @@ import PeopleDashboard from "./components/People/PeopleDashboard";
 import AbsentDashboard from "./components/Absent/AbsentDashboard";
 import ResidentDashboard from "./components/Resident/ResidentDashboard";
 import PeopleDescription from "./components/People/PeopleDescription";
+import ResidentRegisterForm from "./components/Resident/ResidentRegisterForm";
 function App() {
-  return <PeopleDescription></PeopleDescription>;
+  return <ResidentRegisterForm></ResidentRegisterForm>;
 }
 
 export default App;
