@@ -1,79 +1,48 @@
+import React, { useState } from 'react';
+import Styles from "./Login.module.css";
 
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-import "../Login.module.css";
-
-function Login() {
-  const [errorMessages, setErrorMessagers] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const database = [
-    {
-      username: "user1",
-      password: "pass1",
-    },
-  ];
-
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    var { uname, pass } = document.forms[0];
-
-    const userData = database.find((user) => user.username === uname.value);
-
-    if (userData) {
-      if (userData.password !== pass.value) {
-        setErrorMessagers({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      setErrorMessagers({ name: "uname", message: errors.uname });
-    }
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
-  const renderErrorMessage = (name) => {
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you can perform your login logic
+    console.log(`Username: ${username}, Password: ${password}`);
+    // Reset the form fields
+    setUsername('');
+    setPassword('');
   };
-
-  const renderForm = (
-    <div className="form">
-      <from onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label>Username</label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
-        </div>
-
-        <div className="input-container">
-          <label>Password</label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
-        </div>
-
-        <div className="button-container">
-          <input type="submit" />
-        </div>
-      </from>
-    </div>
-  );
 
   return (
-    <div className="app">
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+    <form onSubmit={handleSubmit}>
+      <div class={Styles.container}>
+        <label>Username:</label>
+        <input
+          type="text"
+          value={username}
+          onChange={handleUsernameChange}
+        />
       </div>
-    </div>
+      <div class={Styles.container}>
+        <label>Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+      </div>
+      <button type="submit">Login</button>
+    </form>
   );
-}
+};
 
 export default Login;
