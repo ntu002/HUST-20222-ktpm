@@ -51,14 +51,14 @@
 .column label {
   align-self: flex-start;
 }
-input {
+.boundary input {
   line-height: 40px;
   border-radius: 5px;
   outline: none;
   border: solid #79797e 1px;
   width: 100%;
 }
-label {
+.boundary label {
   color: #79797e;
   font-size: small;
   margin-bottom: 5px;
@@ -75,9 +75,4 @@ label {
 }
 .small {
   width: 100px;
-}
-.cleft {
-}
-.blue {
-  background-color: blue;
 }
