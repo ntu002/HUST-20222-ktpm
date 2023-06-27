@@ -1,8 +1,11 @@
 import Styles from "./PeopleDescription.module.css";
-function PeopleDescription() {
-    return ( <div class={Styles.boundary}>
-        <div class={Styles.header}>
-            <h2>Hà Đức Tuấn</h2>
+import privateStyles from "./AddPeople.module.css";
+function AddPeople() {
+    return ( 
+    <div class={Styles.boundary}>
+        <div class={privateStyles.header}>
+            <p>Thêm nhân khẩu mới</p>
+            <button>Hủy</button>
         </div>
         <div class={Styles.main}>
             <div class={Styles.rowCenter}>
@@ -77,8 +80,11 @@ function PeopleDescription() {
                     <input class={Styles.large}/>
                 </div>
             </div>
+            <div class={Styles.rowLeft}>
+                <button class={privateStyles.btn}>Xác nhận</button>
+            </div>
         </div>
     </div> );
 }
 
-export default PeopleDescription;
+export default AddPeople;

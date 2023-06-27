@@ -5,8 +5,10 @@ import AbsentDashboard from "./components/Absent/AbsentDashboard";
 import ResidentDashboard from "./components/Resident/ResidentDashboard";
 import PeopleDescription from "./components/People/PeopleDescription";
 import ResidentRegisterForm from "./components/Resident/ResidentRegisterForm";
+import AddPeople from "./components/People/AddPeople";
+import EditPeople from "./components/People/EditPeople";
 function App() {
-  return <Login></Login>;
+  return <EditPeople></EditPeople>;
 }
 
 export default App;

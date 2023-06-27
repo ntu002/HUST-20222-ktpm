@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 50px;
+  padding-bottom: 10px;
+  border-bottom: solid #79797e 2px;
+}
+.header p {
+  font-weight: 600;
+  font-size: 20px;
+}
+.header button {
+  background-color: white;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  border: solid red 1px;
+  color: red;
+}
+.btn {
+  background-color: #3f6ad8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+}

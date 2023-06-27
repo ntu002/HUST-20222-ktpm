@@ -56,13 +56,15 @@
   border-radius: 5px;
   outline: none;
   border: solid #79797e 1px;
-  width: 100%;
 }
 .boundary label {
   color: #79797e;
   font-size: small;
   margin-bottom: 5px;
   text-align: left;
+}
+.full {
+  width: 100%;
 }
 .large {
   width: 500px;

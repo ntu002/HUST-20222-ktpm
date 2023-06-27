@@ -1,5 +1,6 @@
 import Styles from "./PeopleDescription.module.css";
-function PeopleDescription() {
+import privateStyles from "./AddPeople.module.css";
+function EditPeople() {
     return ( <div class={Styles.boundary}>
         <div class={Styles.header}>
             <h2>Hà Đức Tuấn</h2>
@@ -77,8 +78,11 @@ function PeopleDescription() {
                     <input class={Styles.large}/>
                 </div>
             </div>
+            <div class={Styles.rowLeft}>
+                <button class={privateStyles.btn}>Xác nhận</button>
+            </div>
         </div>
     </div> );
 }
 
-export default PeopleDescription;
+export default EditPeople;
