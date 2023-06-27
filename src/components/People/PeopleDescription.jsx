@@ -22,8 +22,8 @@ function PeopleDescription() {
                 </div>
                 <div class={Styles.sex}>
                         <label>Giới tính</label>
-                        <input type="radio"/> <p>Nam</p>
-                        <input type="radio"/> <p>Nữ</p>
+                        <input type="radio" class={Styles.full}/> <p>Nam</p>
+                        <input type="radio" class={Styles.full}/> <p>Nữ</p>
                 </div>
             </div>
             <div class={Styles.rowCenter}>
@@ -57,11 +57,11 @@ function PeopleDescription() {
             </div>
             <div class={Styles.line}>
                 <label>Nơi thường trú</label>
-                <input/>
+                <input class={Styles.full}/>
             </div>
             <div class={Styles.line}>
                 <label>Địa chỉ hiện tại</label>
-                <input/>
+                <input class={Styles.full}/>
             </div>
             <div class={Styles.rowCenter}>
                 <div class={Styles.column}>

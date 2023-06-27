@@ -23,25 +23,24 @@ const Login = () => {
   };
 
   return (
+    <div class={Styles.boundary}>
     <form onSubmit={handleSubmit}>
-      <div class={Styles.container}>
-        <label>Username:</label>
+      <h1>Đăng nhập</h1>
+        <label>Tên đăng nhập</label>
         <input
           type="text"
           value={username}
           onChange={handleUsernameChange}
         />
-      </div>
-      <div class={Styles.container}>
-        <label>Password:</label>
+        <label>Mật khẩu</label>
         <input
           type="password"
           value={password}
           onChange={handlePasswordChange}
         />
-      </div>
-      <button type="submit">Login</button>
+      <button type="submit">Đăng nhập</button>
     </form>
+    </div>
   );
 };
 
