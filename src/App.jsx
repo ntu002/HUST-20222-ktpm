@@ -6,7 +6,7 @@ import ResidentDashboard from "./components/Resident/ResidentDashboard";
 import PeopleDescription from "./components/People/PeopleDescription";
 import ResidentRegisterForm from "./components/Resident/ResidentRegisterForm";
 function App() {
-  return <ResidentRegisterForm></ResidentRegisterForm>;
+  return <Login></Login>;
 }
 
 export default App;
