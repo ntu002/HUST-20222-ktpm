@@ -10,7 +10,6 @@ import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
-
 import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
@@ -31,12 +30,18 @@ function App() {
         <div class={Styles.right}>
           <Topbar ></Topbar>
           <div class={Styles.main}>
+
+            <AddHouseHold></AddHouseHold>
+
           
           {(target === "People") && <PeopleDashboard></PeopleDashboard>}
           {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
+
           {(target === "Home") && <PeopleDashboard></PeopleDashboard>}
           {(target === "Meeting") && <HouseholdDashboard></HouseholdDashboard>}
           {(target === "Account") && <HouseholdDashboard></HouseholdDashboard>} 
+
+
           </div>
         </div>
         <div class={Styles.left}>
