@@ -14,7 +14,8 @@ import MainDashBoard from "./components/Home/MainDashBoard";
 import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
-  const [target, setTarget] = useState("HouseHold");
+  const [target, setTarget] = useState("");
+  
   let SetTarget = (name) => {
    
     setTarget(name);
@@ -26,7 +27,9 @@ function App() {
     return (<Login onClick={LoginSet}></Login>);
   }
   else{
+   
     return(
+      
       <div>
         <div class={Styles.right}>
           <Topbar ></Topbar>
@@ -44,7 +47,7 @@ function App() {
           </div>
         </div>
         <div class={Styles.left}>
-          <Sidebar onClick = {SetTarget}></Sidebar>
+          <Sidebar role ="Admin" onClick = {SetTarget}></Sidebar>
         </div>
       </div> 
       );
