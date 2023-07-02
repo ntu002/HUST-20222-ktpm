@@ -11,10 +11,9 @@ function HouseholdDashboard() {
     },
   ];
   let addHousehold = () => {};
-
   return (
     <div class={Styles.boundary}>
-      <div class={Styles.header}>
+      <div class={Styles.header}> 
         <p>Danh sách hộ khẩu</p>
 
         <div>

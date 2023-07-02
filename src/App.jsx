@@ -10,6 +10,7 @@ import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
+import AddHouseHold from "./components/Household/AddHouseHold";
 import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
@@ -25,7 +26,7 @@ function App() {
         <div class={Styles.right}>
           <Topbar></Topbar>
           <div class={Styles.main}>
-            <PeopleDashboard></PeopleDashboard>
+            <AddHouseHold></AddHouseHold>
           </div>
         </div>
         <div class={Styles.left}>
