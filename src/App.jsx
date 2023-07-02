@@ -21,6 +21,9 @@ function App() {
    
     setTarget(name);
   }
+  let LogOut = (e) => {
+    setLogined(false);
+  }
   let LoginSet = (e) => {
     setLogined(true);
   }
@@ -50,7 +53,7 @@ function App() {
           </div>
         </div>
         <div class={Styles.left}>
-          <Sidebar role ="Admin" /*"CovidKhaiBao"*/ onClick = {SetTarget}></Sidebar>
+          <Sidebar role ="Admin" /*"CovidKhaiBao"*/ logOut = {LogOut} onClick = {SetTarget}></Sidebar>
         </div>
       </div> 
       );

@@ -7,7 +7,7 @@
   border-bottom-right-radius: 30px;
 }
 .menu {
-  width: 200px;
+  width: 400px;
   display: flex;
   justify-content: space-evenly;
   font-size: medium;
