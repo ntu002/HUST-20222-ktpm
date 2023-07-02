@@ -34,6 +34,9 @@ function App() {
           
           {(target === "People") && <PeopleDashboard></PeopleDashboard>}
           {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
+          {(target === "Home") && <PeopleDashboard></PeopleDashboard>}
+          {(target === "Meeting") && <HouseholdDashboard></HouseholdDashboard>}
+          {(target === "Account") && <HouseholdDashboard></HouseholdDashboard>} 
           </div>
         </div>
         <div class={Styles.left}>
