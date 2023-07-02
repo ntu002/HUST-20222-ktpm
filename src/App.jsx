@@ -8,16 +8,16 @@ import ResidentRegisterForm from "./components/Resident/ResidentRegisterForm";
 import AddPeople from "./components/People/AddPeople";
 import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
-<<<<<<< Updated upstream
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
+import MainDashBoard from "./components/Home/MainDashBoard";
 function App() {
   return(
   <div>
     <div class={Styles.right}>
       <Topbar></Topbar>
       <div class={Styles.main}>
-        <PeopleDashboard></PeopleDashboard>
+        <MainDashBoard></MainDashBoard>
       </div>
     </div>
     <div class={Styles.left}>
@@ -25,12 +25,7 @@ function App() {
     </div>
   </div> 
   );
-=======
-function App() {
-  //return <EditPeople></EditPeople>;
 
-  return <Sidebar></Sidebar>;
->>>>>>> Stashed changes
 }
 
 export default App;
