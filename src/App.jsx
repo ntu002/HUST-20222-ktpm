@@ -10,8 +10,9 @@ import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
+
 import MainDashBoard from "./components/Home/MainDashBoard";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
   const [target, setTarget] = useState("");
@@ -35,6 +36,7 @@ function App() {
           <Topbar ></Topbar>
           <div class={Styles.main}>
 
+
             
           
           {(target === "People") && <PeopleDashboard></PeopleDashboard>}
@@ -42,6 +44,7 @@ function App() {
           {(target === "Home") &&<HouseholdDashboard></HouseholdDashboard>}
           {(target === "Meeting") &&  <MainDashBoard></MainDashBoard>}
           {(target === "Account") && <HouseholdDashboard></HouseholdDashboard>} 
+
 
 
           </div>
