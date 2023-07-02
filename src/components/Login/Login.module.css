@@ -1,0 +1,57 @@
+/* Login.module.css */
+.boundary {
+  margin: auto;
+  margin-top: 30px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  width: 1200px;
+  height: 600px;
+  color: black;
+}
+.boundary form {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.boundary h1 {
+  margin-bottom: 45px;
+}
+.boundary input {
+  margin-bottom: 35px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  line-height: 25px;
+}
+
+.boundary label {
+  color: #79797e;
+  font-size: medium;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.boundary button[type="submit"] {
+  width: fit-content;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #3f6ad8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.boundary button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
