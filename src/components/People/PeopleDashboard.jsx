@@ -11,7 +11,7 @@ function PeopleDashboard() {
   let [data,setData] = useState(null);
   useEffect(() => {
     const ft = async() => {
-      const response = await fetch('http://localhost:4000/api/cong_dan/');
+      const response = await fetch('http://localhost:4000/api/housing/cong_dan/');
       
       let js = await response.json();
       if(response.ok){
@@ -89,11 +89,11 @@ function PeopleDashboard() {
           </tr>
           {data != null && data.map((item) => (
             <tr>
-              <td>{item.id_cong_dan}</td>
-              <td>{item.ho_ten}</td>
-              <td>{item.CCCD}</td>
-              <td>{item.gioi_tinh}</td>
-              <td>{item.quoc_tich}</td>
+              <td>{item.cong_dan[0].id_cong_dan}</td>
+              <td>{item.cong_dan[0].ho_ten}</td>
+              <td>{item.cong_dan[0].CCCD}</td>
+              <td>{item.cong_dan[0].gioi_tinh}</td>
+              <td>{item.nha[0].dia_chi}</td>
               <td>
                 <i class={Styles.font}>
                   <FontAwesomeIcon icon={faPenToSquare} />

@@ -10,7 +10,7 @@ function HouseholdDashboard() {
   let [hide,setHide] = useState(false);
   useEffect(() => {
     const ft = async() => {
-      const response = await fetch('http://localhost:4000/api/ho_khau/');
+      const response = await fetch('http://localhost:4000/api/housing/ho_khau/');
       
       let js = await response.json();
       if(response.ok){
@@ -66,9 +66,9 @@ function HouseholdDashboard() {
          </tr>
          {data != null &&data.map((item) => (
            <tr>
-             <td>{item.id_nha}</td>
-             <td>{item.id_cong_dan}</td>
-             <td>{item.dia_chi}</td>
+             <td>{item.nha[0].id_nha}</td>
+             <td>{item.cong_dan[0].ho_ten}</td>
+             <td>{item.nha[0].dia_chi}</td>
              <td>
                <i class={Styles.font}>
                  <FontAwesomeIcon icon={faPenToSquare} />
