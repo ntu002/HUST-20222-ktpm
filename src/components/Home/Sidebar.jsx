@@ -7,7 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import logo from "./logo.png";
 function Sidebar() {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 3608d32c8b61806e2bebdada38741a9a76e969d4
     //handleClick(event){
     //    this.setState({
     //        value: event.target.id,

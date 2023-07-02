@@ -10,22 +10,30 @@ import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
-import MainDashBoard from "./components/Home/MainDashBoard";
+import { useState } from "react";
 function App() {
-  return(
-  <div>
-    <div class={Styles.right}>
-      <Topbar></Topbar>
-      <div class={Styles.main}>
-        <MainDashBoard></MainDashBoard>
-      </div>
-    </div>
-    <div class={Styles.left}>
-      <Sidebar></Sidebar>
-    </div>
-  </div> 
-  );
-
+  const [isLogin, setLogined] = useState(false);
+  let LoginSet = (e) => {
+    setLogined(true);
+  }
+  if(!isLogin){
+    return (<Login onClick={LoginSet}></Login>);
+  }
+  else{
+    return(
+      <div>
+        <div class={Styles.right}>
+          <Topbar></Topbar>
+          <div class={Styles.main}>
+            <PeopleDashboard></PeopleDashboard>
+          </div>
+        </div>
+        <div class={Styles.left}>
+          <Sidebar></Sidebar>
+        </div>
+      </div> 
+      );
+  }
 }
 
 export default App;
