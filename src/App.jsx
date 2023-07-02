@@ -15,7 +15,7 @@ import MainDashBoard from "./components/Home/MainDashBoard";
 import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
-  const [target, setTarget] = useState("");
+  const [target, setTarget] = useState("Home");
   
   let SetTarget = (name) => {
    
@@ -50,7 +50,7 @@ function App() {
           </div>
         </div>
         <div class={Styles.left}>
-          <Sidebar role ="Admin" /*"CovidKhaiBao" */ onClick = {SetTarget}></Sidebar>
+          <Sidebar role ="Admin" /*"CovidKhaiBao"*/ onClick = {SetTarget}></Sidebar>
         </div>
       </div> 
       );
