@@ -10,9 +10,15 @@ import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
+
 import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
+  const [target, setTarget] = useState("HouseHold");
+  let SetTarget = (name) => {
+   
+    setTarget(name);
+  }
   let LoginSet = (e) => {
     setLogined(true);
   }
@@ -23,18 +29,20 @@ function App() {
     return(
       <div>
         <div class={Styles.right}>
-          <Topbar></Topbar>
+          <Topbar ></Topbar>
           <div class={Styles.main}>
-            <PeopleDashboard></PeopleDashboard>
+          
+          {(target === "People") && <PeopleDashboard></PeopleDashboard>}
+          {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
           </div>
         </div>
         <div class={Styles.left}>
-          <Sidebar></Sidebar>
+          <Sidebar onClick = {SetTarget}></Sidebar>
         </div>
       </div> 
       );
   }
-
+  
 }
 
 export default App;

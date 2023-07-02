@@ -6,19 +6,15 @@ import { faGear, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import logo from "./logo.png";
-function Sidebar() {
+function Sidebar({onClick}) {
     //handleClick(event){
     //    this.setState({
     //        value: event.target.id,
     //    })
     //}
     
-    const [Target,setTarget] = useState("Home");
-    const handleClick = (event) => {
-        event.preventDefault();
-        setTarget(event.Target.id);
-        alert(event.Target.id);
-    }
+    console.log(onClick);
+    
         return (
             <div class = {Styles.menu}>
                 <div class={Styles.brand}>
@@ -26,12 +22,12 @@ function Sidebar() {
                     <label>Quản Lý Dân Cư</label>
                 </div>
                 <ul>
-                    <li><a id ="Home" /*onClick={handleClick}*/ ><i><FontAwesomeIcon icon={faHouse} /></i><span> Trang Chủ </span></a></li>
-                    <li ><a id = "Househole" onClick={handleClick} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i>
+                    <li><a id ="Home" onClick={() => onClick("Home")} ><i><FontAwesomeIcon icon={faHouse} /></i><span> Trang Chủ </span></a></li>
+                    <li ><a id = "HouseHold" onClick={() => onClick("HouseHold")} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i>
                     <span>Quản Lý Hộ Khẩu</span></a> </li>
-                    <li><a id = "People" /*onClick={this.handleClick}*/><i><FontAwesomeIcon icon={faPerson} /></i><span>Quản Lý Nhân Khẩu</span></a></li>
-                    <li><a id = "Meeting" /*onClick={this.handleClick}*/><i><FontAwesomeIcon icon={faCalendar} /></i><span>Quản Lý Cuộc Họp</span></a></li>
-                    <li><a id = "account" /*onClick={this.handleClick}*/ ><i><FontAwesomeIcon icon={faGear} /></i><span>Tài Khoản</span></a></li>
+                    <li><a id = "People" onClick={() => onClick("People")}><i><FontAwesomeIcon icon={faPerson} /></i><span>Quản Lý Nhân Khẩu</span></a></li>
+                    <li><a id = "Meeting" onClick={() => onClick("Meeting")}><i><FontAwesomeIcon icon={faCalendar} /></i><span>Quản Lý Cuộc Họp</span></a></li>
+                    <li><a id = "account" onClick={() => onClick("account")} ><i><FontAwesomeIcon icon={faGear} /></i><span>Tài Khoản</span></a></li>
                 </ul>
             </div>
         )
