@@ -1,0 +1,80 @@
+.boundary {
+  margin: auto;
+  margin-top: 30px;
+  background-color: #f5f6ff;
+  border-radius: 15px;
+  width: 1200px;
+  color: black;
+}
+.header {
+  box-sizing: border-box;
+  padding: 50px;
+  padding-bottom: 10px;
+  border-bottom: solid #79797e 2px;
+}
+.main {
+  box-sizing: border-box;
+  padding: 50px;
+  padding-top: 10px;
+}
+.rowCenter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100px;
+}
+.rowLeft {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 100px;
+}
+.line {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.sex {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 250px;
+  margin-left: 50px;
+}
+.sex label {
+  width: 200px;
+}
+.column label {
+  align-self: flex-start;
+}
+.boundary input {
+  line-height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: solid #79797e 1px;
+}
+.boundary label {
+  color: #79797e;
+  font-size: small;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.full {
+  width: 100%;
+}
+.large {
+  width: 500px;
+}
+.medium {
+  width: 300px;
+}
+.smedium {
+  width: 200px;
+}
+.small {
+  width: 100px;
+}
