@@ -8,29 +8,33 @@ import ResidentRegisterForm from "./components/Resident/ResidentRegisterForm";
 import AddPeople from "./components/People/AddPeople";
 import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
-<<<<<<< Updated upstream
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
+import { useState } from "react";
 function App() {
-  return(
-  <div>
-    <div class={Styles.right}>
-      <Topbar></Topbar>
-      <div class={Styles.main}>
-        <PeopleDashboard></PeopleDashboard>
-      </div>
-    </div>
-    <div class={Styles.left}>
-      <Sidebar></Sidebar>
-    </div>
-  </div> 
-  );
-=======
-function App() {
-  //return <EditPeople></EditPeople>;
+  const [isLogin, setLogined] = useState(false);
+  let LoginSet = (e) => {
+    setLogined(true);
+  }
+  if(!isLogin){
+    return (<Login onClick={LoginSet}></Login>);
+  }
+  else{
+    return(
+      <div>
+        <div class={Styles.right}>
+          <Topbar></Topbar>
+          <div class={Styles.main}>
+            <PeopleDashboard></PeopleDashboard>
+          </div>
+        </div>
+        <div class={Styles.left}>
+          <Sidebar></Sidebar>
+        </div>
+      </div> 
+      );
+  }
 
-  return <Sidebar></Sidebar>;
->>>>>>> Stashed changes
 }
 
 export default App;

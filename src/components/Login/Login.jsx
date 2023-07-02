@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Styles from "./Login.module.css";
 
-const Login = () => {
+const Login = ({onClick}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,7 +21,7 @@ const Login = () => {
     setUsername("");
     setPassword("");
   };
-
+  
   return (
     <div class={Styles.boundary}>
       <form onSubmit={handleSubmit}>
@@ -34,7 +34,7 @@ const Login = () => {
           value={password}
           onChange={handlePasswordChange}
         />
-        <button type="submit">Đăng nhập</button>
+        <button type="submit" onClick={onClick}>Đăng nhập</button>
       </form>
     </div>
   );
