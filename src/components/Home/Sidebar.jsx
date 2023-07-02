@@ -6,15 +6,6 @@ import { faGear, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import logo from "./logo.png";
-<<<<<<< HEAD
-function Sidebar() {    
-    const [Target,setTarget] = useState("Home");
-    const handleClick = (event) => {
-        event.preventDefault();
-        setTarget(event.Target.id);
-        alert(event.Target.id);
-    }
-=======
 function Sidebar({onClick}) {
     //handleClick(event){
     //    this.setState({
@@ -24,7 +15,6 @@ function Sidebar({onClick}) {
     
     console.log(onClick);
     
->>>>>>> 3a8e7d94fdd15529b6fe1550fb9de5307ef6b270
         return (
             <div class = {Styles.menu}>
                 <div class={Styles.brand}>

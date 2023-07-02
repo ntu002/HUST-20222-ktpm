@@ -1,87 +1,78 @@
-import Styles from "./PeopleDescription.module.css";
+import Styles from "./HouseHoldDescription.module.css";
 function HouseHoldDescription() {
+  let members = [
+    {
+      name: "Hà Đức Tuấn",
+      cccd:"12345678910",
+      birth: "10/2/2001",
+      relationship: "Con",
+    },
+    {
+      name: "Hà Thị Lan",
+      cccd:"12345678910",
+      birth: "20/2/2004",
+      relationship: "Con",
+    },
+    {
+      name: "Nguyễn Thị An",
+      cccd:"12345678910",
+      birth: "10/10/1975",
+      relationship: "Vợ",
+    },
+    
+  ]
   return (
     <div class={Styles.boundary}>
       <div class={Styles.header}>
-        <h2>Hà Đức Tuấn</h2>
+        <h2>Chi tiết hộ khẩu</h2>
       </div>
       <div class={Styles.main}>
         <div class={Styles.rowCenter}>
           <div class={Styles.column}>
-            <label>Họ và tên</label>
+            <label>Mã hộ khẩu</label>
             <input class={Styles.large} />
           </div>
           <div class={Styles.column}>
-            <label>Tên gọi khác (nếu có)</label>
-            <input class={Styles.large} />
-          </div>
-        </div>
-        <div class={Styles.rowLeft}>
-          <div class={Styles.column}>
-            <label>Ngày sinh</label>
-            <input />
-          </div>
-          <div class={Styles.sex}>
-            <label>Giới tính</label>
-            <input type="radio" class={Styles.full} /> <p>Nam</p>
-            <input type="radio" class={Styles.full} /> <p>Nữ</p>
-          </div>
-        </div>
-        <div class={Styles.rowCenter}>
-          <div class={Styles.column}>
-            <label>Số CMND/CCCD</label>
-            <input class={Styles.large} />
-          </div>
-          <div class={Styles.column}>
-            <label>Số hộ chiếu</label>
+            <label>Địa chỉ</label>
             <input class={Styles.large} />
           </div>
         </div>
         <div class={Styles.rowCenter}>
           <div class={Styles.column}>
-            <label>Quê quán</label>
+            <label>Họ tên chủ hộ</label>
             <input class={Styles.large} />
           </div>
           <div class={Styles.column}>
-            <label>Quốc tịch</label>
-            <input class={Styles.small} />
-          </div>
-          <div class={Styles.column}>
-            <label>Dân tộc</label>
-            <input class={Styles.small} />
-          </div>
-          <div class={Styles.column}>
-            <label>Tôn giáo</label>
-            <input class={Styles.smedium} />
-          </div>
-        </div>
-        <div class={Styles.line}>
-          <label>Nơi thường trú</label>
-          <input class={Styles.full} />
-        </div>
-        <div class={Styles.line}>
-          <label>Địa chỉ hiện tại</label>
-          <input class={Styles.full} />
-        </div>
-        <div class={Styles.rowCenter}>
-          <div class={Styles.column}>
-            <label>Trình độ học vấn</label>
-            <input class={Styles.small} />
-          </div>
-          <div class={Styles.column}>
-            <label>nghề nghiệp</label>
-            <input class={Styles.medium} />
-          </div>
-          <div class={Styles.column}>
-            <label>Nơi làm việc</label>
+            <label>Họ tên chủ hộ</label>
             <input class={Styles.large} />
           </div>
         </div>
+        </div>
+      
+
+        <div class = {Styles.member}>
+        <div class = {Styles.header}>
+          <h2>Các thành viên trong hộ</h2>
+        </div>
+        <table class={Styles.table}>
+          <tr>
+            <th>Họ và tên </th>
+            <th>CCCD</th>
+            <th>Ngày sinh</th>
+            <th>Quan hệ với chủ hộ </th>
+          </tr>
+          {members.map((item) => (
+            <tr>
+              <td>{item.name}</td>
+              <td>{item.cccd}</td>
+              <td>{item.birth}</td>
+              <td>{item.relationship}</td>
+            </tr>
+          ))}
+        </table>
+        </div>  
       </div>
-      <div>
-        
-      </div>
-    </div>
+
   );
 }
 

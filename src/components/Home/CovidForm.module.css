@@ -1,9 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 50px;
+  padding-bottom: 10px;
+  border-bottom: solid #79797e 2px;
+}
+.header p {
+  font-weight: 600;
+  font-size: 20px;
+}
+.header button {
+  background-color: white;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  border: solid red 1px;
+  color: red;
+}
+.btn {
+  background-color: #3f6ad8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+}
 .boundary {
   margin: auto;
   margin-top: 30px;
   background-color: #f5f6ff;
   border-radius: 15px;
-  width: 100%;
+  width: 1200px;
+  height: 1200px;
   color: black;
 }
 .header {
@@ -67,7 +96,7 @@
   width: 100%;
 }
 .large {
-  width: 650px;
+  width: 500px;
 }
 .medium {
   width: 300px;
@@ -78,17 +107,25 @@
 .small {
   width: 100px;
 }
-.member {
-  width: 700px;
-  margin-left: 50px;
-  text-align: left;
+.line select {
+  height: 50px;
 }
-.member .header {
-  text-align: left;
-  font-weight: lighter;
+.line select option {
+  height: 50px;
 }
-.member .table {
-  text-align: left;
-  width: 80%;
-  line-height: 40px;
+.check {
+  display: flex;
+  justify-content: space-evenly;
+}
+.check label {
+  color: black;
+  font-size: 12px;
+  width: 500px;
+}
+.label {
+  margin-right: 1000px;
+  font-size: 20px;
+}
+.checkdiv {
+  margin-top: 50px;
 }

@@ -10,11 +10,11 @@ import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
-<<<<<<< HEAD
+import HouseHoldDescription from "./components/Household/HouseholdDescription";
+import AddRelationship from "./components/Household/popup/AddRelationship";
 import AddHouseHold from "./components/Household/AddHouseHold";
-=======
-
->>>>>>> 3a8e7d94fdd15529b6fe1550fb9de5307ef6b270
+import EditHouseHold from "./components/Household/EditHouseHold";
+import CovidForm from "./components/Home/CovidForm";
 import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
@@ -35,13 +35,12 @@ function App() {
         <div class={Styles.right}>
           <Topbar ></Topbar>
           <div class={Styles.main}>
-<<<<<<< HEAD
-            <AddHouseHold></AddHouseHold>
-=======
-          
-          {(target === "People") && <PeopleDashboard></PeopleDashboard>}
-          {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
->>>>>>> 3a8e7d94fdd15529b6fe1550fb9de5307ef6b270
+          {/* <HouseHoldDescription></HouseHoldDescription>           */}
+          {/* {(target === "People") && <PeopleDashboard></PeopleDashboard>} */}
+          {/* {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>} */}
+          {/* <AddHouseHold></AddHouseHold> */}
+          {/* <EditHouseHold></EditHouseHold> */}
+          <CovidForm></CovidForm>
           </div>
         </div>
         <div class={Styles.left}>
@@ -50,10 +49,7 @@ function App() {
       </div> 
       );
   }
-<<<<<<< HEAD
-=======
   
->>>>>>> 3a8e7d94fdd15529b6fe1550fb9de5307ef6b270
 }
 
 export default App;
