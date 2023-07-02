@@ -4,7 +4,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import AddPeople from "./AddPeople";
 function PeopleDashboard() {
+  let [hideForm,setForm] = useState(true);
+  let [hide,setHide] = useState(false);
   let [data,setData] = useState(null);
   useEffect(() => {
     const ft = async() => {
@@ -42,10 +45,19 @@ function PeopleDashboard() {
   //     quoc_tich: "123 Đường A, quận B, huyện C, tỉnh D",
   //   },
   // ];
-  let addPeople = () => {};
-
+  let addPeople = () => {
+    setForm(false);
+    setHide(true);
+  };
+  
+  let unHide = () => {
+    setForm(true);
+    setHide(false);
+  }
   return (
-    <div class={Styles.boundary}>
+    <div>
+      {(!hideForm ) && <AddPeople destroy = {unHide}></AddPeople>}
+      {(!hide) && (      <div class={Styles.boundary}>
       <div class={Styles.header}>
         <p>Danh sách nhân khẩu</p>
 
@@ -122,7 +134,10 @@ function PeopleDashboard() {
           </div>
         </div>
       </div>
+    </div>)}
+
     </div>
+    
   );
 }
 

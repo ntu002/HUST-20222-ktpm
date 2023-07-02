@@ -1,6 +1,6 @@
 import Styles from "./HouseHoldDescription.module.css";
 import privateStyles from "./AddHouseHold.module.css";
-function AddHouseHold() {
+function AddHouseHold({destroy}) {
     let members = [
         {
           name: "Hà Đức Tuấn",
@@ -27,7 +27,7 @@ function AddHouseHold() {
     <div class={Styles.whiteBoundary}>
       <div class={privateStyles.header}>
         <p>Thêm hộ khẩu mới</p>
-        <button>Hủy</button>
+        <button onClick={destroy}>Hủy</button>
       </div>
       <div class={Styles.main}>
         <div class={Styles.rowCenter}>
@@ -74,7 +74,7 @@ function AddHouseHold() {
         </table>
         <button class={privateStyles.btn}>Thêm thành viên</button>
         </div>  
-        <button class={privateStyles.btn}> Thêm </button>
+        <button class={privateStyles.btn} onClick={destroy}> Thêm </button>
     </div>
   );
 }

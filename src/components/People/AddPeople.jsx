@@ -1,11 +1,11 @@
 import Styles from "./PeopleDescription.module.css";
 import privateStyles from "./AddPeople.module.css";
-function AddPeople() {
+function AddPeople({destroy}) {
   return (
     <div class={Styles.boundary}>
       <div class={privateStyles.header}>
         <p>Thêm nhân khẩu mới</p>
-        <button>Hủy</button>
+        <button onClick={destroy}>Hủy</button>
       </div>
       <div class={Styles.main}>
         <div class={Styles.rowCenter}>
@@ -80,7 +80,7 @@ function AddPeople() {
           </div>
         </div>
         <div class={Styles.rowLeft}>
-          <button class={privateStyles.btn}>Xác nhận</button>
+          <button class={privateStyles.btn} onClick={destroy}>Xác nhận</button>
         </div>
       </div>
     </div>

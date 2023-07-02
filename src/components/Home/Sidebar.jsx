@@ -22,11 +22,11 @@ function Sidebar({onClick,role}) {
                     <label>Quản Lý Dân Cư</label>
                 </div>
                 <ul>
-                {(role === "Admin") && <li><a id ="Home" onClick={() => onClick("Home")} ><i><FontAwesomeIcon icon={faHouse} /></i><span> Trang Chủ </span></a></li>}
+                {(role === "CovidKhaiBao"||role === "Admin") && <li><a id ="Home" onClick={() => onClick("Home")} ><i><FontAwesomeIcon icon={faHouse} /></i><span> Trang Chủ </span></a></li>}
           {(role === "Admin") && <li ><a id = "HouseHold" onClick={() => onClick("HouseHold")} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i>
                     <span>Quản Lý Hộ Khẩu</span></a> </li>}
           {(role === "Admin") &&<li><a id = "People" onClick={() => onClick("People")}><i><FontAwesomeIcon icon={faPerson} /></i><span>Quản Lý Nhân Khẩu</span></a></li>}
-          {(role === "CovidKhaiBao"|| role === "Admin") &&  <li><a id = "Meeting" onClick={() => onClick("Meeting")}><i><FontAwesomeIcon icon={faCalendar} /></i><span>Quản Lý Cuộc Họp</span></a></li>}
+         
           {(role === "CovidKhaiBao"|| role === "Admin") &&<li><a id = "account" onClick={() => onClick("account")} ><i><FontAwesomeIcon icon={faGear} /></i><span>Tài Khoản</span></a></li>} 
                     
                     
