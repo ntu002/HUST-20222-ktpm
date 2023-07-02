@@ -2,14 +2,23 @@ import Styles from "./HHDashboard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { useState,useEffect } from "react";
 function HouseholdDashboard() {
-  let data = [
-    {
-      maho: 1,
-      chuho: "Hà Đức Tuấn",
-      diachi: "123 đường A, quận B, huyện C, tỉnh D",
-    },
-  ];
+  let [data,setData] = useState(null);
+  useEffect(() => {
+    const ft = async() => {
+      const response = await fetch('http://localhost:4000/api/ho_khau/');
+      
+      let js = await response.json();
+      if(response.ok){
+        setData(js);
+        console.log(data);
+      }
+    }
+    ft();
+  },[]
+  )
+  
   let addHousehold = () => {};
   return (
     <div class={Styles.boundary}>
