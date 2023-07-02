@@ -4,11 +4,14 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import AddPeople from "./AddPeople";
 function PeopleDashboard() {
+  let [hideForm,setForm] = useState(true);
+  let [hide,setHide] = useState(false);
   let [data,setData] = useState(null);
   useEffect(() => {
     const ft = async() => {
-      const response = await fetch('http://localhost:4000/api/cong_dan/');
+      const response = await fetch('http://localhost:4000/api/housing/cong_dan/');
       
       let js = await response.json();
       if(response.ok){
@@ -42,10 +45,19 @@ function PeopleDashboard() {
   //     quoc_tich: "123 Đường A, quận B, huyện C, tỉnh D",
   //   },
   // ];
-  let addPeople = () => {};
-
+  let addPeople = () => {
+    setForm(false);
+    setHide(true);
+  };
+  
+  let unHide = () => {
+    setForm(true);
+    setHide(false);
+  }
   return (
-    <div class={Styles.boundary}>
+    <div>
+      {(!hideForm ) && <AddPeople destroy = {unHide}></AddPeople>}
+      {(!hide) && (      <div class={Styles.boundary}>
       <div class={Styles.header}>
         <p>Danh sách nhân khẩu</p>
 
@@ -77,11 +89,11 @@ function PeopleDashboard() {
           </tr>
           {data != null && data.map((item) => (
             <tr>
-              <td>{item.id_cong_dan}</td>
-              <td>{item.ho_ten}</td>
-              <td>{item.CCCD}</td>
-              <td>{item.gioi_tinh}</td>
-              <td>{item.quoc_tich}</td>
+              <td>{item.cong_dan[0].id_cong_dan}</td>
+              <td>{item.cong_dan[0].ho_ten}</td>
+              <td>{item.cong_dan[0].CCCD}</td>
+              <td>{item.cong_dan[0].gioi_tinh}</td>
+              <td>{item.nha[0].dia_chi}</td>
               <td>
                 <i class={Styles.font}>
                   <FontAwesomeIcon icon={faPenToSquare} />
@@ -122,7 +134,10 @@ function PeopleDashboard() {
           </div>
         </div>
       </div>
+    </div>)}
+
     </div>
+    
   );
 }
 

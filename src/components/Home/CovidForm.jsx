@@ -1,5 +1,5 @@
 import Styles from "./CovidForm.module.css";
-function CovidForm() {
+function CovidForm({destroy}) {
     return ( 
         // <div>
         //     <p>CCCD/ CMTND</p>
@@ -16,7 +16,7 @@ function CovidForm() {
 <div class={Styles.whiteBoundary}>
   <div class={Styles.header}>
     <p>Khai báo Covid</p>
-    <button>Hủy</button>
+    <button onClick={destroy}>Hủy</button>
   </div>
   <div class={Styles.main}>
     <div class={Styles.rowCenter}>
@@ -104,7 +104,7 @@ function CovidForm() {
       </div>
   </div>
   </div>
-    <button class={Styles.btn}> Khai báo </button>
+    <button class={Styles.btn} onClick={destroy}> Khai báo </button>
 </div>
      );
 }

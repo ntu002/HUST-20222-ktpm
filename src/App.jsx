@@ -40,13 +40,17 @@ function App() {
           <div class={Styles.main}>
           {(target === "People") && <PeopleDashboard></PeopleDashboard>}
           {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
-          {(target === "Home") &&<HouseholdDashboard></HouseholdDashboard>}
-          {(target === "Meeting") &&  <MainDashBoard></MainDashBoard>}
+          {(target === "Home") &&<MainDashBoard></MainDashBoard>}
+          
           {(target === "Account") && <HouseholdDashboard></HouseholdDashboard>} 
           </div>
         </div>
         <div class={Styles.left}>
+<<<<<<< HEAD
           <Sidebar role ="Admin" onClick = {SetTarget} logOut={logOut}></Sidebar>
+=======
+          <Sidebar role ="Admin" /*"CovidKhaiBao" */ onClick = {SetTarget}></Sidebar>
+>>>>>>> aa7604427290da77caf348739aae84bb8b4c1a12
         </div>
       </div> 
       );
