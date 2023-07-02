@@ -3,30 +3,45 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 function PeopleDashboard() {
-  let data = [
-    {
-      id: 1,
-      hoten: "Hà Đức Tuấn",
-      cccd: "012345678910",
-      gioitinh: "Nam",
-      diachi: "123 Đường A, quận B, huyện C, tỉnh D",
-    },
-    {
-      id: 1,
-      hoten: "Hà Đức Tuấn",
-      cccd: "012345678910",
-      gioitinh: "Nam",
-      diachi: "123 Đường A, quận B, huyện C, tỉnh D",
-    },
-    {
-      id: 1,
-      hoten: "Hà Đức Tuấn",
-      cccd: "012345678910",
-      gioitinh: "Nam",
-      diachi: "123 Đường A, quận B, huyện C, tỉnh D",
-    },
-  ];
+  let [data,setData] = useState(null);
+  useEffect(() => {
+    const ft = async() => {
+      const response = await fetch('http://localhost:4000/api/cong_dan/');
+      
+      let js = await response.json();
+      if(response.ok){
+        setData(js);
+        console.log(data);
+      }
+    }
+    ft();
+  },[]
+  )
+  // let data = [
+  //   {
+  //     id_cong_dan: 1,
+  //     ho_ten: "Hà Đức Tuấn",
+  //     CCCD: "012345678910",
+  //     gioi_tinh: "Nam",
+  //     quoc_tich: "123 Đường A, quận B, huyện C, tỉnh D",
+  //   },
+  //   {
+  //     id_cong_dan: 1,
+  //     ho_ten: "Hà Đức Tuấn",
+  //     CCCD: "012345678910",
+  //     gioi_tinh: "Nam",
+  //     quoc_tich: "123 Đường A, quận B, huyện C, tỉnh D",
+  //   },
+  //   {
+  //     id_cong_dan: 1,
+  //     ho_ten: "Hà Đức Tuấn",
+  //     CCCD: "012345678910",
+  //     gioi_tinh: "Nam",
+  //     quoc_tich: "123 Đường A, quận B, huyện C, tỉnh D",
+  //   },
+  // ];
   let addPeople = () => {};
 
   return (
@@ -60,13 +75,13 @@ function PeopleDashboard() {
             <th>Địa chỉ</th>
             <th>Thao tác</th>
           </tr>
-          {data.map((item) => (
+          {data != null && data.map((item) => (
             <tr>
-              <td>{item.id}</td>
-              <td>{item.hoten}</td>
-              <td>{item.cccd}</td>
-              <td>{item.gioitinh}</td>
-              <td>{item.diachi}</td>
+              <td>{item.id_cong_dan}</td>
+              <td>{item.ho_ten}</td>
+              <td>{item.CCCD}</td>
+              <td>{item.gioi_tinh}</td>
+              <td>{item.quoc_tich}</td>
               <td>
                 <i class={Styles.font}>
                   <FontAwesomeIcon icon={faPenToSquare} />
