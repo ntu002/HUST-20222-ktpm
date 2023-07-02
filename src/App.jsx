@@ -10,10 +10,19 @@ import EditPeople from "./components/People/EditPeople";
 import Sidebar from "./components/Home/Sidebar";
 import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
+<<<<<<< HEAD
 import AddHouseHold from "./components/Household/AddHouseHold";
+=======
+
+>>>>>>> 3a8e7d94fdd15529b6fe1550fb9de5307ef6b270
 import { useState } from "react";
 function App() {
   const [isLogin, setLogined] = useState(false);
+  const [target, setTarget] = useState("HouseHold");
+  let SetTarget = (name) => {
+   
+    setTarget(name);
+  }
   let LoginSet = (e) => {
     setLogined(true);
   }
@@ -24,17 +33,27 @@ function App() {
     return(
       <div>
         <div class={Styles.right}>
-          <Topbar></Topbar>
+          <Topbar ></Topbar>
           <div class={Styles.main}>
+<<<<<<< HEAD
             <AddHouseHold></AddHouseHold>
+=======
+          
+          {(target === "People") && <PeopleDashboard></PeopleDashboard>}
+          {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
+>>>>>>> 3a8e7d94fdd15529b6fe1550fb9de5307ef6b270
           </div>
         </div>
         <div class={Styles.left}>
-          <Sidebar></Sidebar>
+          <Sidebar onClick = {SetTarget}></Sidebar>
         </div>
       </div> 
       );
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 3a8e7d94fdd15529b6fe1550fb9de5307ef6b270
 }
 
 export default App;
