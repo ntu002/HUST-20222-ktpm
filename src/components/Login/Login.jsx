@@ -25,7 +25,7 @@ const Login = ({onClick}) => {
   return (
     <div class={Styles.boundary}>
       <form onSubmit={handleSubmit}>
-        <h1>Đăng nhập</h1>
+        <h1>Đăng nhập <br/> <span class={Styles.branchName}>Hệ thống quản lý <br/>Phường Thiên Thanh</span></h1>
         <label>Tên đăng nhập</label>
         <input type="text" value={username} onChange={handleUsernameChange} />
         <label>Mật khẩu</label>

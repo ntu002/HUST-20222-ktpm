@@ -12,6 +12,7 @@ import Topbar from "./components/Home/Topbar";
 import Styles from "./App.module.css";
 import MainDashBoard from "./components/Home/MainDashBoard";
 import { useState } from "react";
+import AddHouseHold from "./components/Household/AddHouseHold";
 function App() {
   const [isLogin, setLogined] = useState(false);
   const [target, setTarget] = useState("");
@@ -23,6 +24,9 @@ function App() {
   let LoginSet = (e) => {
     setLogined(true);
   }
+  let logOut = (e) => {
+    setLogined(false);
+  }
   if(!isLogin){
     return (<Login onClick={LoginSet}></Login>);
   }
@@ -32,24 +36,17 @@ function App() {
       
       <div>
         <div class={Styles.right}>
-          <Topbar ></Topbar>
+          <Topbar name={"Trần Nhật Hóa"}></Topbar>
           <div class={Styles.main}>
-
-            
-          
-          {/* {(target === "People") && <PeopleDashboard></PeopleDashboard>}
+          {(target === "People") && <PeopleDashboard></PeopleDashboard>}
           {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
           {(target === "Home") &&<HouseholdDashboard></HouseholdDashboard>}
           {(target === "Meeting") &&  <MainDashBoard></MainDashBoard>}
-          {(target === "Account") && <HouseholdDashboard></HouseholdDashboard>}  */}
-          <PeopleDashboard></PeopleDashboard>
-
-
-
+          {(target === "Account") && <HouseholdDashboard></HouseholdDashboard>} 
           </div>
         </div>
         <div class={Styles.left}>
-          <Sidebar role ="Admin" onClick = {SetTarget}></Sidebar>
+          <Sidebar role ="Admin" onClick = {SetTarget} logOut={logOut}></Sidebar>
         </div>
       </div> 
       );
