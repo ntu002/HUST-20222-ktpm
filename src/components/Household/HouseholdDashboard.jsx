@@ -30,8 +30,17 @@ function HouseholdDashboard() {
     setForm(true);
     setHide(false);
   }
+
+  let edit = (id) =>{
+    // const response = await fetch('http://localhost:4000/api/housing/ho_khau/', );
+    //   let js = await response.json();
+    //   if(response.ok){
+    //     setData(js);
+    //     console.log(data);
+    //   }
+  }
   return (
-    
+
    <div>
   {(!hideForm ) && <AddHouseHold destroy = {unHide}></AddHouseHold>}
   
@@ -70,11 +79,11 @@ function HouseholdDashboard() {
              <td>{item.cong_dan[0].ho_ten}</td>
              <td>{item.nha[0].dia_chi}</td>
              <td>
-               <i class={Styles.font}>
+               <i class={Styles.font} onClick={()=> edit(item.nha[0].id_nha)}>
                  <FontAwesomeIcon icon={faPenToSquare} />
                </i>
                &emsp;
-               <i class={Styles.font}>
+               <i class={Styles.font} onClick={()=> formEdit(item.nha[0].id_nha)}>
                  <FontAwesomeIcon icon={faTrashCan} />
                </i>
              </td>

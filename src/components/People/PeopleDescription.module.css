@@ -3,8 +3,11 @@
   margin-top: 30px;
   background-color: #f5f6ff;
   border-radius: 15px;
-  width: 1200px;
+  width: 100%;
   color: black;
+}
+.container {
+  background-color: white;
 }
 .header {
   box-sizing: border-box;

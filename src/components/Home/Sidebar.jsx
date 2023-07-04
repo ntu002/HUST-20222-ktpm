@@ -6,15 +6,7 @@ import { faGear, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import logo from "./logo.png";
-function Sidebar({onClick,role, logOut}) {
-    //handleClick(event){
-    //    this.setState({
-    //        value: event.target.id,
-    //    })
-    //}
-    
-    console.log(onClick);
-    
+function Sidebar({onClick,role, logOut}) {    
         return (
             <div class = {Styles.menu}>
                 <div class={Styles.brand}>
@@ -26,7 +18,8 @@ function Sidebar({onClick,role, logOut}) {
           {(role === "Admin") && <li ><a id = "HouseHold" onClick={() => onClick("HouseHold")} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i>
                     <span>Quản Lý Hộ Khẩu</span></a> </li>}
           {(role === "Admin") &&<li><a id = "People" onClick={() => onClick("People")}><i><FontAwesomeIcon icon={faPerson} /></i><span>Quản Lý Nhân Khẩu</span></a></li>}
-         
+          {(role === "Admin") &&<li><a id = "account" onClick={() => onClick("Absent")} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i><span>Quản lý tạm vắng</span></a></li>} 
+          {(role === "Admin") &&<li><a id = "account" onClick={() => onClick("Resident")} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i><span>Quản lý tạm trú</span></a></li>} 
           {(role === "CovidKhaiBao"|| role === "Admin") &&<li><a id = "account" onClick={() => onClick("account")} ><i><FontAwesomeIcon icon={faGear} /></i><span>Tài Khoản</span></a></li>} 
             <button class={Styles.btn} onClick={logOut}>Đăng xuất</button>        
                     
