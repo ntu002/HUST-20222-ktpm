@@ -74,7 +74,7 @@ function MainDashBoard() {
                   <td>{item.cong_dan[0].id_cong_dan}</td>
                   <td>{item.cong_dan[0].ho_ten}</td>
                   <td>{(item.thuoc_dien == -1)? "--": ("f" + item.thuoc_dien.toString())}</td>
-                  <td>{(item.co_bao_hiem_y_te) ? "Có": "Không" } </td>
+                  <td>{(item.co_bao_hiem_y_te == true) ? "Có": "Không" } </td>
                   <td>
                     <i class={Styles.font}>
                       <FontAwesomeIcon icon={faPenToSquare} />
