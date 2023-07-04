@@ -20,7 +20,6 @@ function Sidebar({onClick,role, logOut}) {
           {(role === "Admin") &&<li><a id = "People" onClick={() => onClick("People")}><i><FontAwesomeIcon icon={faPerson} /></i><span>Quản Lý Nhân Khẩu</span></a></li>}
           {(role === "Admin") &&<li><a id = "account" onClick={() => onClick("Absent")} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i><span>Quản lý tạm vắng</span></a></li>} 
           {(role === "Admin") &&<li><a id = "account" onClick={() => onClick("Resident")} ><i><FontAwesomeIcon icon={faPeopleGroup} /></i><span>Quản lý tạm trú</span></a></li>} 
-          {(role === "CovidKhaiBao"|| role === "Admin") &&<li><a id = "account" onClick={() => onClick("account")} ><i><FontAwesomeIcon icon={faGear} /></i><span>Tài Khoản</span></a></li>} 
             <button class={Styles.btn} onClick={logOut}>Đăng xuất</button>        
                     
                     

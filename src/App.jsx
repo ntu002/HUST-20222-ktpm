@@ -43,7 +43,6 @@ function App() {
           <div class={Styles.main}>
           {(target === "People") && <PeopleDashboard></PeopleDashboard>}
           {(target === "HouseHold") && <HouseholdDashboard></HouseholdDashboard>}
-          {(target === "Account") && <HouseholdDashboard></HouseholdDashboard>} 
           {(target === "Absent") && <AbsentDashboard></AbsentDashboard>}
           {(target === "Resident") && <ResidentDashboard></ResidentDashboard>}
           {(target === "Home") &&<MainDashBoard></MainDashBoard>}
