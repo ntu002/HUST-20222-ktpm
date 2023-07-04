@@ -34,32 +34,16 @@ function AddPeople({destroy}) {
             <label>Số CMND/CCCD</label>
             <input class={Styles.large} />
           </div>
-          <div class={Styles.column}>
-            <label>Số hộ chiếu</label>
-            <input class={Styles.large} />
-          </div>
         </div>
         <div class={Styles.rowCenter}>
           <div class={Styles.column}>
-            <label>Quê quán</label>
+            <label>Quốc tịch</label>
             <input class={Styles.large} />
           </div>
           <div class={Styles.column}>
-            <label>Quốc tịch</label>
-            <input class={Styles.small} />
-          </div>
-          <div class={Styles.column}>
             <label>Dân tộc</label>
-            <input class={Styles.small} />
+            <input class={Styles.large} />
           </div>
-          <div class={Styles.column}>
-            <label>Tôn giáo</label>
-            <input class={Styles.smedium} />
-          </div>
-        </div>
-        <div class={Styles.line}>
-          <label>Nơi thường trú</label>
-          <input class={Styles.full} />
         </div>
         <div class={Styles.line}>
           <label>Địa chỉ hiện tại</label>
@@ -67,12 +51,8 @@ function AddPeople({destroy}) {
         </div>
         <div class={Styles.rowCenter}>
           <div class={Styles.column}>
-            <label>Trình độ học vấn</label>
-            <input class={Styles.small} />
-          </div>
-          <div class={Styles.column}>
             <label>nghề nghiệp</label>
-            <input class={Styles.medium} />
+            <input class={Styles.large} />
           </div>
           <div class={Styles.column}>
             <label>Nơi làm việc</label>
