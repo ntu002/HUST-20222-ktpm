@@ -15,11 +15,14 @@ import { useState } from "react";
 import AddHouseHold from "./components/Household/AddHouseHold";
 function App() {
   const [isLogin, setLogined] = useState(false);
-  const [target, setTarget] = useState("");
+  const [target, setTarget] = useState("Home");
   
   let SetTarget = (name) => {
    
     setTarget(name);
+  }
+  let LogOut = (e) => {
+    setLogined(false);
   }
   let LoginSet = (e) => {
     setLogined(true);

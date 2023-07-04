@@ -6,20 +6,20 @@ import { useState,useEffect } from "react";
 import CovidForm from "./CovidForm";
 function MainDashBoard() {
 
-  // let [data,setData] = useState(null);
-  // useEffect(() => {
-  //   const ft = async() => {
-  //     const response = await fetch('http://localhost:4000/api/info_ca_nhan/');
+  let [data,setData] = useState(null);
+  useEffect(() => {
+     const ft = async() => {
+       const response = await fetch('http://localhost:4000/api/covid/main/');
       
-  //     let js = await response.json();
-  //     if(response.ok){
-  //       setData(js);
-  //       console.log(data);
-  //     }
-  //   }
-  //   ft();
-  // },[]
-  // )
+       let js = await response.json();
+       if(response.ok){
+         setData(js);
+         console.log(data);
+       }
+     }
+     ft();
+   },[]
+   )
   let [hideForm,setForm] = useState(true);
   let [hide,setHide] = useState(false);
 
@@ -29,14 +29,7 @@ function MainDashBoard() {
     setHide(false);
   }
 
-     let data = [
-         {
-          id_cong_dan: 1,
-           ho_ten: "Hà Đức Tuấn",
-           CCCD: "12345678910",
-           type: "F1",
-         },
-       ];
+     
       let addDeclare = () => {
         setForm(false);
         setHide(true);
@@ -78,10 +71,10 @@ function MainDashBoard() {
               </tr>
               {data != null && data.map((item) => (
                 <tr>
-                  <td>{item.id_cong_dan}</td>
-                  <td>{item.ho_ten}</td>
-                  <td>{item.CCCD}</td>
-                  <td>{item.type} </td>
+                  <td>{item.cong_dan[0].id_cong_dan}</td>
+                  <td>{item.cong_dan[0].ho_ten}</td>
+                  <td>{(item.thuoc_dien == -1)? "--": ("f" + item.thuoc_dien.toString())}</td>
+                  <td>{(item.co_bao_hiem_y_te) ? "Có": "Không" } </td>
                   <td>
                     <i class={Styles.font}>
                       <FontAwesomeIcon icon={faPenToSquare} />
