@@ -19,7 +19,6 @@ function PeopleDashboard() {
     let js = await response.json();
     if(response.ok){
       setData(js);
-      
       console.log(data);
     }
   }

@@ -3,16 +3,16 @@ import privateStyles from "./AddPeople.module.css";
 import { useState, useEffect } from "react";
 function EditPeople({destroy, targetId}) {
    let [people, setPeople] = useState(null);
-  
      useEffect(() => {
        const ft = async() => {
          const response = await fetch('http://localhost:4000/api/cong_dan/'+targetId);
 
          let js = await response.json();
+         console.log(js);
           setPeople(js);
          if(response.ok){
-          console.log(people[0].ho_ten
-            );
+          // console.log(people[0].ho_ten
+          //   );
           console.log(people);
          }
        }
@@ -21,11 +21,11 @@ function EditPeople({destroy, targetId}) {
      )
    
    
-  if(targetId != null)console.log(targetId);
-  
+  // if(targetId != null)console.log(targetId);
+  // let birth = new Date(people[0].ngay_sinh);
   return (
     <div>
-    {(people != null) && ( <div class={Styles.boundary}>
+    {/* {(people != null) && ( <div class={Styles.boundary}>
       <div class={Styles.header}>
         {(<h2>{people.ho_ten}</h2>)}
        <h2>{people[0].ho_ten}</h2>
@@ -45,7 +45,8 @@ function EditPeople({destroy, targetId}) {
         <div class={Styles.rowLeft}>
           <div class={Styles.column}>
             <label>Ngày sinh</label>
-            <input value={(people != null)? people[0].ngay_sinh:""}/>
+
+            <input value={birth.getDay()+"/"+birth.getMonth()+"/"+birth.getFullYear()}/>
           </div>
           <div class={Styles.sex}>
             <label>Giới tính</label>
@@ -60,7 +61,7 @@ function EditPeople({destroy, targetId}) {
           </div>
           <div class={Styles.column}>
             <label>Số hộ chiếu</label>
-            <input class={Styles.large} value={(people != null)? people[0].ngay_sinh:"Không có"}/>
+            <input class={Styles.large} value="Không có"/>
           </div>
         </div>
         <div class={Styles.rowCenter}>
@@ -100,7 +101,7 @@ function EditPeople({destroy, targetId}) {
           <button class={privateStyles.btn} onClick={destroy}>Xác nhận</button>
         </div>
       </div>
-    </div>)}
+    </div>)} */}
     </div>
   );
 }

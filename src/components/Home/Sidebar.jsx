@@ -10,7 +10,7 @@ function Sidebar({onClick,role, logOut}) {
         return (
             <div class = {Styles.menu}>
                 <div class={Styles.brand}>
-                    <img src={logo} alt="Logo" />
+                    <img class={Styles.logo} src={logo} alt="Logo" />
                     <label>Quản Lý Dân Cư</label>
                 </div>
                 <ul>
