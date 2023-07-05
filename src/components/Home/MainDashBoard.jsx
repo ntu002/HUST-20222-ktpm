@@ -69,7 +69,7 @@ function MainDashBoard() {
                 <th>BHYT</th>
                 <th>Thao tác</th>
               </tr>
-              {data != null && data.map((item) => (
+              {data != null && data != undefined &&  data.map((item) => (
                 <tr>
                   <td>{item.cong_dan[0].id_cong_dan}</td>
                   <td>{item.cong_dan[0].ho_ten}</td>

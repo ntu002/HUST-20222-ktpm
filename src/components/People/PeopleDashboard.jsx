@@ -5,23 +5,42 @@ import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import AddPeople from "./AddPeople";
+import EditPeople from "./EditPeople";
 function PeopleDashboard() {
   let [hideForm,setForm] = useState(true);
   let [hide,setHide] = useState(false);
   let [data,setData] = useState(null);
-  useEffect(() => {
-    const ft = async() => {
-      const response = await fetch('http://localhost:4000/api/housing/cong_dan/');
+  let [search,setSearch] = useState("");
+  let [EditHide,setEdit] = useState(true);
+  let [targetId,setTarget] = useState(-1);
+  let [load, setLoad] = useState(1);
+  let ft = async() => {
+    const response = await fetch('http://localhost:4000/api/cong_dan/housingInfo');
+    let js = await response.json();
+    if(response.ok){
+      setData(js);
       
-      let js = await response.json();
-      if(response.ok){
-        setData(js);
-        console.log(data);
+      console.log(data);
+    }
+  }
+    useEffect(() => {
+      console.log(hide);
+      if(hide === true){
+        return;
+      }
+      ft();
+    },[]
+    )
+    let del  = async(i) => {
+      const response = await fetch('http://localhost:4000/api/cong_dan/' + i, {method: 'DELETE'});
+      console.log(response);
+      
+      
+      if(response.status == 200){
+        ft();
       }
     }
-    ft();
-  },[]
-  )
+  
   // let data = [
   //   {
   //     id_cong_dan: 1,
@@ -45,6 +64,8 @@ function PeopleDashboard() {
   //     quoc_tich: "123 Đường A, quận B, huyện C, tỉnh D",
   //   },
   // ];
+
+  // Add Form Controller
   let addPeople = () => {
     setForm(false);
     setHide(true);
@@ -54,9 +75,30 @@ function PeopleDashboard() {
     setForm(true);
     setHide(false);
   }
+  // Edit Form Controller
+  let EditUnHide = (i) => {
+    setEdit(false);
+    setHide(true);
+    setTarget(i);
+    console.log("oke");
+  }
+  let Delete = (i) => {
+    setTarget(i);
+    del();
+  }
+  let EditHideSetting = () => {
+    setEdit(true);
+    setHide(false);
+  }
+  // Search Controller
+  let SearchChange = () => {
+
+  }
+  let index = 0;
   return (
     <div>
       {(!hideForm ) && <AddPeople destroy = {unHide}></AddPeople>}
+      {(!EditHide) && <EditPeople destroy = {EditHideSetting} targetId={targetId}></EditPeople>}
       {(!hide) && (      <div class={Styles.boundary}>
       <div class={Styles.header}>
         <p>Danh sách nhân khẩu</p>
@@ -67,6 +109,7 @@ function PeopleDashboard() {
               class={Styles.search}
               type="search"
               placeholder=" Tìm kiếm"
+              onChange={SearchChange}
             />
             <i class={Styles.icon}>
               <FontAwesomeIcon icon={faSearch} />
@@ -87,24 +130,28 @@ function PeopleDashboard() {
             <th>Địa chỉ</th>
             <th>Thao tác</th>
           </tr>
-          {data != null && data.map((item) => (
+          {data != null && data.map((item) => {
+            index++;
+            return(
+            
             <tr>
-              <td>{item.cong_dan[0].id_cong_dan}</td>
-              <td>{item.cong_dan[0].ho_ten}</td>
-              <td>{item.cong_dan[0].CCCD}</td>
-              <td>{item.cong_dan[0].gioi_tinh}</td>
-              <td>{item.nha[0].dia_chi}</td>
+              <td>{index}</td>
+              <td>{item.ho_ten}</td>
+              <td>{item.CCCD}</td>
+              <td>{item.gioi_tinh}</td>
+              <td>{(item.info_ho_khau.length == 0)? "vô gia cư":(item.info_ho_khau[0].nha[0].dia_chi)}</td>
               <td>
-                <i class={Styles.font}>
+                <i class={Styles.font} onClick={(i) => EditUnHide(item.id_cong_dan)}>
                   <FontAwesomeIcon icon={faPenToSquare} />
                 </i>
                 &emsp;
-                <i class={Styles.font}>
-                  <FontAwesomeIcon icon={faTrashCan} />
-                </i>
+                
+                {(item.info_ho_khau.length == 0 || item.info_ho_khau[0].la_chu_ho == false) && <i class={Styles.font} onClick={(i) => del(item.id_cong_dan)}>
+                              <FontAwesomeIcon icon={faTrashCan} />
+                </i>}
               </td>
             </tr>
-          ))}
+          )})}
         </table>
         <div class={Styles.chooseBox}>
           <div class={Styles.searchBySex}>
